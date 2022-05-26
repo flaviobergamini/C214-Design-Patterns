@@ -14,21 +14,34 @@ namespace Questao1 {
             tel.telefone = "(35)35123-8146";
             tel1.telefone = "(11)3456-8146";
             telefone.mostraInfo();
-           // Console.WriteLine(telefone.getDDD());
-            //Console.WriteLine(telefone.getOperadora());
-            //Console.WriteLine(telefone.getNumero());
 
 
             List<Telefone> tels = new List<Telefone>();
             tels.Add(telefone);
             tels.Add(tel);
             tels.Add(tel1);
+
+            Console.WriteLine("---------Lista Original----------");
+            foreach(Telefone t in tels){
+                Console.WriteLine(t.getNumero());
+            }
+
+
+            Console.WriteLine("\n-----------BubbleSort----------");
             OrdenaDDD or = new OrdenaDDD();
             or.ordenar(tels);
             foreach(Telefone t in or.getTelefones())
             {
                 Console.WriteLine(t.getNumero());
-            }
+            } 
+
+            Console.WriteLine("\n-----------QuickSort-----------");
+            OrdenaOperadora op = new OrdenaOperadora();
+            op.ordenar(tels);
+            foreach(Telefone t in op.getTelefones())
+            {
+                Console.WriteLine(t.getNumero());
+            } 
         }
     }
 }

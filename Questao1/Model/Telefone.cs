@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace Questao1.Model{
 
-    class Telefone : Pessoa
+    public class Telefone : Pessoa
     {
         public Telefone(string nome, int anoNasc, string endereco)
          : base(nome, anoNasc, endereco){}

@@ -1,6 +1,6 @@
 namespace Questao1.Model{
     
-    abstract class Pessoa{
+    public abstract class Pessoa{
         public string nome{get;}
         public int anoNasc{get;}
         public string endereco{get;}

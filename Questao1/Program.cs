@@ -50,6 +50,28 @@ namespace Questao1 {
             {
                 Console.WriteLine(t.getNumero());
             } 
+
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++=");
+            Console.WriteLine("\n-----------QuickSort-----------");
+            Operadora operadora = new Operadora();
+             foreach(Telefone t in operadora.getTelefones(tels))
+            {
+                Console.WriteLine(t.getNumero());
+            }
+
+            Console.WriteLine("\n-----------OddEvenSort-----------");
+            Numero numero = new Numero();
+             foreach(Telefone t in numero.getTelefones(tels))
+            {
+                Console.WriteLine(t.getNumero());
+            }
+
+            Console.WriteLine("\n-----------BubbleSort----------");
+            DDD ddd = new DDD();
+             foreach(Telefone t in ddd.getTelefones(tels))
+            {
+                Console.WriteLine(t.getNumero());
+            }
         }
     }
 }

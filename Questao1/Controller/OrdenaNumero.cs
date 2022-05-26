@@ -4,13 +4,7 @@ using Questao1.View;
 namespace Questao1.Controller{
     public class OrdenaNumero : IOrdenacao
     {
-        private List<Telefone> telefones = new List<Telefone>();
-        public List<Telefone> getTelefones()
-        {
-            return telefones;
-        }
-
-        public void ordenar(List<Telefone> telefones)
+        public List<Telefone> ordenar(List<Telefone> telefones)
         {
             bool ordenado = false;
             int tamanho = telefones.Count();
@@ -43,7 +37,7 @@ namespace Questao1.Controller{
                     }
                 }
             }
-            this.telefones = telefones;
+            return telefones;
         }
     }
 }

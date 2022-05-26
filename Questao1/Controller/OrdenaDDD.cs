@@ -4,9 +4,7 @@ using Questao1.Model;
 namespace Questao1.Controller{
     public class OrdenaDDD : IOrdenacao
     {
-        private List<Telefone> telefones = new List<Telefone>();
-
-        public void ordenar(List<Telefone> telefones)
+        public List<Telefone> ordenar(List<Telefone> telefones)
          {
              // BubbleSort
              int tamanho = telefones.Count();
@@ -20,13 +18,9 @@ namespace Questao1.Controller{
                          telefones[j+1] = tel;
                      }
                  }
-
-             this.telefones = telefones;
+            
+            return telefones;
          } 
 
-        public List<Telefone> getTelefones()
-        {
-            return this.telefones;
-        }
     }
 }

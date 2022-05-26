@@ -4,60 +4,48 @@ using Questao1.View;
 namespace Questao1.Controller{
     public class OrdenaOperadora : IOrdenacao
     {
-        private static List<Telefone> listaTelefones = new List<Telefone>();
-
-        public OrdenaOperadora(){
-            listaTelefones.Clear();
-        }
-
-        public List<Telefone> getTelefones()
-        {
-            return listaTelefones;
-        }
-
-        public void ordenar(List<Telefone> telefones)
-        {
+        public List<Telefone> ordenar(List<Telefone> telefones)
+        { 
             int inicio = 0;
             int fim = telefones.Count() - 1;
 
-            quickSort(telefones, inicio, fim);
+            return this.quickSort(telefones, inicio, fim); 
         }
 
-        private static void quickSort(List<Telefone> telefones, int inicio, int tamanho)
+        private List<Telefone> quickSort(List<Telefone> telefones, int inicio, int tamanho)
         {
-            if (inicio < tamanho)
-            {
-                Telefone tel = telefones[inicio];
-                int i = inicio + 1;
-                int f = tamanho;
+            int inicial, final, numero;
+            Telefone tel;
 
-                while (i <= f)
-                {
-                    if (telefones[i].getOperadora() <= tel.getOperadora())
-                    {
-                        i++;
-                    }
-                    else if (tel.getOperadora() < telefones[f].getOperadora())
-                    {
-                        f--;
-                    }
-                    else
-                    {
-                        Telefone troca = telefones[i];
-                        telefones[i] = telefones[f];
-                        telefones[f] = troca;
-                        i++;
-                        f--;
-                    }
+            
+            inicial = inicio;
+            final = tamanho;
+            numero = telefones[(inicio + tamanho) / 2].getOperadora();
+            
+            while(inicial <= final) {
+                while(telefones[inicial].getOperadora() < numero && inicial < tamanho) {
+                    inicial++;
                 }
-
-                telefones[inicio] = telefones[f];
-                telefones[f] = tel;
-
-                quickSort(telefones, inicio, f - 1);
-                quickSort(telefones, f + 1, tamanho);
+                while(telefones[final].getOperadora() > numero && final > inicio) {
+                    final--;
+                }
+                if(inicial <= final) {
+                    tel = telefones[inicial];
+                    telefones[inicial] = telefones[final];
+                    telefones[final] = tel;
+                    inicial++;
+                    final--;
+                }
             }
-            listaTelefones = telefones;
+            
+            if(final > inicio) {
+                quickSort(telefones, inicio, final);
+            }
+            if(inicial < tamanho) {
+                quickSort(telefones, inicial, tamanho);
+            }
+
+            return telefones; 
         }
 
     }

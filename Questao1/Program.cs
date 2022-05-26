@@ -7,70 +7,45 @@ namespace Questao1 {
     class Program{
         public static void Main(String [] args){
             Console.WriteLine("---------------Lista Telefônica---------------");
+            
             Telefone telefone = new Telefone("Flávio", 1998, "Rua 1");
-            Telefone tel = new Telefone("Rafaela", 1999, "Rua 10");
-            Telefone tel1 = new Telefone("Rafainha", 1999, "Rua 11");
-            telefone.telefone = "(19)99794-8146";
-            tel.telefone = "(35)35123-8146";
-            tel1.telefone = "(11)3456-8146";
-            telefone.mostraInfo();
+            Telefone telefone1 = new Telefone("Fernando", 1999, "Rua 10");
+            Telefone telefone2 = new Telefone("Vânia", 1999, "Rua 11");
+
+            telefone.telefone = "(19)9794-8146";
+            telefone1.telefone = "(35)35123-8146";
+            telefone2.telefone = "(11)3456-8146";
 
 
             List<Telefone> tels = new List<Telefone>();
             tels.Add(telefone);
-            tels.Add(tel);
-            tels.Add(tel1);
+            tels.Add(telefone1);
+            tels.Add(telefone2);
 
             Console.WriteLine("---------Lista Original----------");
             foreach(Telefone t in tels){
-                Console.WriteLine(t.getNumero());
+                t.mostraInfo();
             }
 
-
-            Console.WriteLine("\n-----------BubbleSort----------");
-            OrdenaDDD or = new OrdenaDDD();
-            or.ordenar(tels);
-            foreach(Telefone t in or.getTelefones())
+            Console.WriteLine("\n-----------OddEvenSort - Numero-----------");
+            Numero numero = new Numero(tels);
+             foreach(Telefone t in numero.ordenar())
             {
-                Console.WriteLine(t.getNumero());
-            } 
-
-            Console.WriteLine("\n-----------QuickSort-----------");
-            OrdenaOperadora op = new OrdenaOperadora();
-            op.ordenar(tels);
-            foreach(Telefone t in op.getTelefones())
-            {
-                Console.WriteLine(t.getNumero());
-            } 
-
-            Console.WriteLine("\n-----------OddEvenSort-----------");
-            OrdenaNumero on = new OrdenaNumero();
-            on.ordenar(tels);
-            foreach(Telefone t in on.getTelefones())
-            {
-                Console.WriteLine(t.getNumero());
-            } 
-
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++=");
-            Console.WriteLine("\n-----------QuickSort-----------");
-            Operadora operadora = new Operadora();
-             foreach(Telefone t in operadora.getTelefones(tels))
-            {
-                Console.WriteLine(t.getNumero());
+                t.mostraInfo();
             }
 
-            Console.WriteLine("\n-----------OddEvenSort-----------");
-            Numero numero = new Numero();
-             foreach(Telefone t in numero.getTelefones(tels))
+            Console.WriteLine("\n-----------BubbleSort - DDD----------");
+            DDD ddd = new DDD(tels);
+             foreach(Telefone t in ddd.ordenar())
             {
-                Console.WriteLine(t.getNumero());
-            }
-
-            Console.WriteLine("\n-----------BubbleSort----------");
-            DDD ddd = new DDD();
-             foreach(Telefone t in ddd.getTelefones(tels))
+                t.mostraInfo();
+            } 
+            
+            Console.WriteLine("\n-----------QuickSort - Operadora-----------");
+            Operadora operadora = new Operadora(tels);
+             foreach(Telefone t in operadora.ordenar())
             {
-                Console.WriteLine(t.getNumero());
+                t.mostraInfo();
             }
         }
     }

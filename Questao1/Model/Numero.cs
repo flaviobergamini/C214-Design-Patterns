@@ -4,8 +4,9 @@ namespace Questao1.Model{
 
     public class Numero : ListaTelefonica
     {
-        public Numero(){
+        public Numero(List<Telefone> telefones){
+            this.telefones = telefones;
             this.iOrdenacao = new OrdenaNumero();
-        } 
+        }
     }
 }

@@ -42,6 +42,14 @@ namespace Questao1 {
             {
                 Console.WriteLine(t.getNumero());
             } 
+
+            Console.WriteLine("\n-----------OddEvenSort-----------");
+            OrdenaNumero on = new OrdenaNumero();
+            on.ordenar(tels);
+            foreach(Telefone t in on.getTelefones())
+            {
+                Console.WriteLine(t.getNumero());
+            } 
         }
     }
 }

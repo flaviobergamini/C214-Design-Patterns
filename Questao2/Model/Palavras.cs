@@ -42,5 +42,10 @@ namespace Questao2.Model{
         public string getFrase(){
             return this.frase;
         }
+
+        public List<ContaPalavras> getContadores() {
+            return this.contadores;
+        }
+
     }
 }

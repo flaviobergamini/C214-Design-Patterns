@@ -15,6 +15,8 @@ namespace Questao2{
             palavras.registraContador(cp2);
             palavras.registraContador(cp3);
 
+            Console.WriteLine(palavras.getContadores().Count());
+
             palavras.setNovaFrase("O Rato roeu a roupa do rei de Roma");
             
             palavras.removeContador(cp3);

@@ -4,22 +4,12 @@ namespace Questao2.Model{
 
     public class Palavras : IPalavras
     {
-
-        private string _frase = "";
-
-        public string frase{
-            get{return this._frase;}
-            set{
-                Console.WriteLine("------------Nova Frase para análise------------");
-                this._frase = frase;
-                this.notificaContadores();
-            }
-        }
-
+        private string frase;
 	    private List<ContaPalavras> contadores;
 
         public Palavras(){
             this.contadores = new List<ContaPalavras>();
+            this.frase = "";
         }
 
         public void registraContador(ContaPalavras contaPalavras)
@@ -37,8 +27,20 @@ namespace Questao2.Model{
           public void notificaContadores()
         {
             foreach(ContaPalavras cp in this.contadores){
-                
+                cp.update(this);
             }
+        }
+
+        public void setNovaFrase(string frase){
+            {
+                Console.WriteLine("================== Nova Frase para análise ==================");
+                this.frase = frase;
+                this.notificaContadores();
+            }
+        }
+
+        public string getFrase(){
+            return this.frase;
         }
     }
 }

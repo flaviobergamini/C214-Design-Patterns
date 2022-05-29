@@ -26,17 +26,17 @@ Observação: Para essa questão, foi construído um programa de lista telefôni
 
 
 #### Projeto
-- Esse projeto foi construído usando a linguagem C# com o .NET 6.0. Além dos projetos pedidos nos enunciados, foi criado também projetos de testes unitários afim de validar os dois sistemas.
-Para o projeto Questão1, foi usado três algorítmos de ordenação, sendo QuickSort, BubbleSort e Odd-Even.
+- Esses projetos foram construídos usando a linguagem C# com o .NET 6.0. Além dos projetos pedidos nos enunciados, foi criado também projetos de testes unitários afim de validar os dois sistemas.
+- Para o projeto Questão1, foi usado três algorítmos de ordenação, sendo QuickSort, BubbleSort e Odd-Even.
 
 ### :computer: Funcionalidades dos Projetos
 #### Funcionalidades de Questão 1
 - Adiciona um novo numero telefônico com os dados do usuário responsável;
-- Lista todas os números cadastradas com a possibilidade de ver os dados do usuário;
+- Lista todos os números cadastrados com a possibilidade de ver os dados do usuário;
 - Tal listagem exibe as informações em ordem crescente seguindo os critérios de  DDD, Operadora ou pelo Número Completo;
 
 #### Funcionalidades de Questão 2
-Ao inserir uma frase, todos os objetos observadores serão capaz de:
+Ao inserir uma frase, todos os objetos observadores serão capazes de:
 - Contar todas as palavras;
 - Contar palavras com quantidades pares de caracteres;
 - Contar palavras começadas com maiúsculas;
